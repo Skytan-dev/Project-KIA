@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Plr.tscn" type="PackedScene" id=1]
+[ext_resource path="res://testmap.png" type="Texture" id=2]
+[ext_resource path="res://Plr2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 474.494, 275.896 )
+
+[node name="plr1" parent="." instance=ExtResource( 1 )]
+position = Vector2( -294.178, 90.4314 )
+scale = Vector2( 7.64, 7.64 )
+
+[node name="testmap" type="Sprite" parent="."]
+z_index = -616
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="testmap"]
+collision_layer = 513
+collision_mask = 513
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="testmap/StaticBody2D"]
+position = Vector2( -22.6274, 228.787 )
+scale = Vector2( 150, 1 )
+shape = SubResource( 1 )
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 13.9982, 23.1119 )
+scale = Vector2( 21.8155, 10.7006 )
+z_index = -1297
+texture = ExtResource( 5 )
+
+[node name="plr2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 330.086, 80.4932 )
+scale = Vector2( 7.64, 7.64 )
+
+[node name="Node2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( -474.358, -276.223 )
+
+[connection signal="bigoof" from="plr1" to="Node2D" method="_on_plr1_bigoof"]
+[connection signal="hello" from="plr1" to="plr2" method="_on_plr1_hello"]
+[connection signal="hi" from="plr1" to="plr2" method="_on_plr1_hi"]
+[connection signal="oof" from="plr1" to="plr1" method="_on_plr1_oof"]
+[connection signal="oof" from="plr1" to="Node2D" method="_on_plr1_oof"]
+[connection signal="bigoof" from="plr2" to="Node2D" method="_on_plr2_bigoof"]
+[connection signal="hello" from="plr2" to="plr1" method="_on_plr2_hello"]
+[connection signal="hi" from="plr2" to="plr1" method="_on_plr2_hi"]
+[connection signal="oof" from="plr2" to="Node2D" method="_on_plr2_oof"]
