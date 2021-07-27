@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://hpbox.png" type="Texture" id=1]
 [ext_resource path="res://hp1.gd" type="Script" id=2]
 [ext_resource path="res://UI.gd" type="Script" id=3]
+[ext_resource path="res://HP font.tres" type="DynamicFont" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -20,10 +21,11 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="Control"]
 
 [node name="hp" type="Label" parent="Control/CanvasLayer"]
-margin_left = 38.0
-margin_top = 49.0
-margin_right = 113.0
-margin_bottom = 80.0
+margin_left = 37.0
+margin_top = 30.0
+margin_right = 112.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 4 )
 text = "HP = 10000"
 align = 1
 valign = 1
@@ -35,9 +37,10 @@ __meta__ = {
 
 [node name="hp2" type="Label" parent="Control/CanvasLayer"]
 margin_left = 897.526
-margin_top = 51.7622
+margin_top = 34.7622
 margin_right = 972.526
-margin_bottom = 82.7622
+margin_bottom = 107.762
+custom_fonts/font = ExtResource( 4 )
 text = "HP = 10000"
 align = 1
 valign = 1

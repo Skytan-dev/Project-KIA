@@ -27,3 +27,7 @@ func _on_plr2_bigoof():
 
 func _on_plr2_oof():
 	p2health -= 5
+
+
+func _on_plr1_holyoof():
+	p1health -= 12
